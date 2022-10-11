@@ -2,3 +2,6 @@
 	path = server/FManager
 	url = https://github.com/ArtemBystrovOfficial/FManager
 	branch = TaskSession
+[submodule "client/libs/FServer2.0"]
+	path = client/libs/FServer2.0
+	url = https://github.com/ArtemBystrovOfficial/FServer2.0.git
