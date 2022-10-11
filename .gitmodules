@@ -1,0 +1,4 @@
+[submodule "server/FManager"]
+	path = server/FManager
+	url = https://github.com/ArtemBystrovOfficial/FManager
+	branch = TaskSession
