@@ -1,0 +1,18 @@
+#ifndef COLORS_H
+#define COLORS_H
+
+#include <QString>
+
+extern QString
+IDLE_STATE_COLOR,
+BUSY_STATE_COLOR,
+ERROR_STATE_COLOR,
+MEASURE_STATE_COLOR;
+
+extern QString
+STATUSBAR_FAIL_COLOR,
+STATUSBAR_OK_COLOR;
+
+extern const size_t CHANNELS_SIZE;
+
+#endif // COLORS_H
