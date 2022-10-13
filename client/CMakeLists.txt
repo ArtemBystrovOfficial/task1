@@ -11,11 +11,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
-
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick)
 find_package(Qt6 REQUIRED COMPONENTS QuickWidgets)
 
 
@@ -23,22 +20,22 @@ set(PROJECT_SOURCES
         Colors.h
         Colors.cpp
         main.cpp
-        ../../server/FManager/MainPocket.cpp
+        ${PROJECT_SOURCE_DIR}../../server/FManager/MainPocket.cpp
         appwindow.cpp
         appwindow.h
         qml.qrc
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(client
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
+#if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+ #   qt_add_executable(client
+  #      MANUAL_FINALIZATION
+   #     ${PROJECT_SOURCES}
+    #)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET client APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
+#else()
     if(ANDROID)
         add_library(client SHARED
             ${PROJECT_SOURCES}
@@ -50,7 +47,7 @@ else()
           ${PROJECT_SOURCES}
         )
     endif()
-endif()
+#endif()
 
 
 # fclient install

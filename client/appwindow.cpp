@@ -6,7 +6,7 @@ using ec = ReciverSingle<MainPocket>::f_error;
 using mf = MainPocket::function;
 
 AppWindow::AppWindow(QWidget *parent)
-    : QMainWindow{parent},client("188.168.25.28",21112), is_exit(false)
+    : QMainWindow{parent},client("127.0.0.1",2001), is_exit(false)
 {
 
     // try connect area

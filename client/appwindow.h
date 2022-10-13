@@ -19,7 +19,7 @@
 #include <atomic>
 #include <vector>
 
-#include "../../server/FManager/MainPocket.hpp"
+#include "MainPocket.hpp"
 #include "FClient.hpp"
 
 class AppWindow : public QMainWindow

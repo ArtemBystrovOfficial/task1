@@ -57,8 +57,8 @@ Rectangle {
 
             objectName: "start"
             id: start
-            implicitWidth: 75
-            height: 29
+            implicitWidth: 100
+            height: 40
             visible: true
             text: qsTr("<font color='#fefefe'> Start </font>")
             smooth: true
@@ -111,8 +111,8 @@ Rectangle {
 
             objectName: "set_range"
             id: set_range
-            implicitWidth: 75
-            height: 29
+            implicitWidth: 100
+            height: 40
             text: qsTr("<font color='#fefefe'> Set Range </font>")
             highlighted: true
             flat: true
@@ -166,8 +166,8 @@ Rectangle {
 
             objectName: "get_result"
             id: get_result
-            implicitWidth: 75
-            height: 29
+            implicitWidth: 100
+            height: 40
             text: qsTr("<font color='#fefefe'> Get result </font>")
             highlighted: true
             flat: true
