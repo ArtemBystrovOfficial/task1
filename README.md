@@ -37,7 +37,7 @@ Two ways:
   - don't forget add qt dlls (Win) , to client excecutable for launch not in qt creator
 - Or dowload executables ( client / server )
   - [Linux(x64)](https://drive.google.com/drive/folders/1SCg0zZtYdAG-fSqRu0q5NHu_OcZUkzB1?usp=sharing)
-  - [Windows(x64)](https://drive.google.com/drive/folders/18ctuBu1KJAtAOGSUTMAXnyGdDNWiSVkj?usp=sharing)
+  - [Windows(x64)](https://drive.google.com/drive/folders/1TueNXhj2bQn7kUi3OQeKhPqCSbACTsAE?usp=sharing)
 
 ## Screenshots
 ![out](https://user-images.githubusercontent.com/92841151/195632019-9baebc7e-2f88-46a9-9d5f-9fe0317944b5.png)
