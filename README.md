@@ -40,6 +40,7 @@ Two ways:
   - [Windows(x64)](https://drive.google.com/drive/folders/18ctuBu1KJAtAOGSUTMAXnyGdDNWiSVkj?usp=sharing)
 
 ## Screenshots
+![out](https://user-images.githubusercontent.com/92841151/195632019-9baebc7e-2f88-46a9-9d5f-9fe0317944b5.png)
 
 ## Feed
 
