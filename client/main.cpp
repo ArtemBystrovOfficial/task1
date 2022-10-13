@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 
     wid.setMinimumHeight(240);
     wid.setMinimumWidth(720);
-    wid.resize(720,480);
+
+    wid.resize(720,(CHANNELS_SIZE+1)*60);
 
     wid.show();
 

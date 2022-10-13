@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>Channel.qml</file>
+        <file>Annotation.qml</file>
     </qresource>
 </RCC>

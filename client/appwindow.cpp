@@ -1,5 +1,7 @@
 #include "appwindow.h"
 
+//#define DEBUG_DESIGN
+
 using ec = ReciverSingle<MainPocket>::f_error;
 using mf = MainPocket::function;
 
@@ -9,13 +11,13 @@ AppWindow::AppWindow(QWidget *parent)
 
     // try connect area
 
-
+#ifndef DEBUG_DESIGN
     if(!client.connect())
     {
         QMessageBox::warning(this,"error","error connection");
         exit(0);
     }
-
+#endif
     client_settings();
 
     ///////////////////
@@ -64,6 +66,14 @@ void AppWindow::client_settings()
 
 void AppWindow::createChannels(int n)
 {
+    //names of channels
+    QQuickWidget * names =  new QQuickWidget(QUrl("qrc:/Annotation.qml"));
+    names->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    names->setFixedHeight(50);
+
+    main_layout->addWidget(names);
+
+
     for(int i=0;i<n;i++)
     {
         QQuickWidget * pv =  new QQuickWidget(QUrl("qrc:/Channel.qml"));
@@ -103,6 +113,10 @@ void AppWindow::createChannels(int n)
               continue;
           connect(button4,SIGNAL(click(int)),this,SLOT(req_get_result(int)));
 
+          auto * channel_numb = root->findChild<QObject*>("channel");
+          if(!channel_numb)
+              continue;
+          channel_numb->setProperty("text",QString("    ")+QString::number(i));
         }
 
     }
@@ -208,9 +222,11 @@ void AppWindow::setResult(int channel,float n)
 
 AppWindow::~AppWindow()
 {
-    client.disconect();
 
     is_exit.store(true);
+
+    //extra exit unlock recv block
+    req_get_result(0);
 
     if(recv_th.joinable())
           recv_th.join();
@@ -279,6 +295,9 @@ void AppWindow::_recv_procces()
     while(!is_exit.load() && client.isConnected())
     {
         client >> recv_pocket;
+
+        if(is_exit.load())
+            break;
 
         auto & [pocket, er] = recv_pocket;
 

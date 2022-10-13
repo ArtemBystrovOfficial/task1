@@ -22,45 +22,102 @@ Rectangle {
         anchors.fill: parent
         spacing: 20
 
+
+        Label {
+            id: channel
+            background: Rectangle
+            {
+                width:30
+                height:20
+
+                border.color: "#dddddd"
+                color: "black"
+            }
+
+            objectName: "channel"
+            color: "#ffffff"
+            text: qsTr("    0")
+        }
+
         Button {
             signal click(int channel)
-            onClicked: click(main.channel)
+
+            MouseArea {
+                id: mouseArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: parent.click(main.channel)
+            }
+
+            background: Rectangle {
+                border.color: "#007306"
+                color:  mouseArea.containsMouse ? "#555555" : "#333333"
+            }
+
 
             objectName: "start"
             id: start
             implicitWidth: 75
             height: 29
             visible: true
-            text: qsTr("Start")
+            text: qsTr("<font color='#fefefe'> Start </font>")
             smooth: true
             clip: false
             display: AbstractButton.TextBesideIcon
             checkable: false
-            highlighted: false
-            flat: false
+            highlighted: true
+            flat: true
         }
 
         Button {
             signal click(int channel)
-            onClicked: click(main.channel)
+
+            MouseArea {
+                id: mouseArea2
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: parent.click(main.channel)
+            }
+
+            background: Rectangle {
+                border.color: "#949c00"
+                color:  mouseArea2.containsMouse ? "#555555" : "#333333"
+            }
 
             objectName: "stop"
             id: stop
             implicitWidth: 75
             height: 29
-            text: qsTr("Stop")
+            text: qsTr("<font color='#fefefe'> Stop </font>")
+            highlighted: true
+            flat: true
         }
+
 
         Button {
             signal click(int channel,int range)
-            onClicked: click(main.channel,input.text)
+
+            MouseArea {
+                id: mouseArea3
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: parent.click(main.channel,input.text)
+            }
+
+            background: Rectangle {
+                border.color: "#68007d"
+                color:  mouseArea3.containsMouse ? "#555555" : "#333333"
+            }
 
             objectName: "set_range"
             id: set_range
             implicitWidth: 75
             height: 29
-            text: qsTr("Set Range")
+            text: qsTr("<font color='#fefefe'> Set Range </font>")
+            highlighted: true
+            flat: true
         }
+
 
         Label {
 
@@ -71,34 +128,51 @@ Rectangle {
         }
 
 
+
         Rectangle{
 
-                width: 80
-                height: 28
-                border.color: "#ffffff"
-                color: "#1c1c1c"
-                TextInput {
-                    id: input
-                    color: "#ffffff"; text: "0"; selectionColor: "green"
-                    font.pixelSize: 16; font.bold: true
-                    width: parent.width-16
-                    maximumLength: 16
-                    anchors.centerIn: parent
-                    focus: true
-                }
-             }
+            width: 80
+            height: 28
+            border.color: "#ffffff"
+            color: "#1c1c1c"
+            TextInput {
+                id: input
+                color: "#ffffff"; text: "0"; selectionColor: "green"
+                font.pixelSize: 16; font.bold: true
+                width: parent.width-16
+                maximumLength: 16
+                anchors.centerIn: parent
+                focus: true
+            }
+        }
+
 
 
         Button {
             signal click(int channel)
-            onClicked: click(main.channel)
+
+            MouseArea {
+                id: mouseArea4
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: parent.click(main.channel)
+            }
+
+            background: Rectangle {
+                border.color: "#9c0270"
+                color:  mouseArea4.containsMouse ? "#555555" : "#333333"
+            }
+
 
             objectName: "get_result"
             id: get_result
             implicitWidth: 75
             height: 29
-            text: qsTr("Get result")
+            text: qsTr("<font color='#fefefe'> Get result </font>")
+            highlighted: true
+            flat: true
         }
+
 
         Label {
 
@@ -111,6 +185,7 @@ Rectangle {
             text: qsTr("Status")
         }
 
+
         Label {
 
             objectName: "result"
@@ -121,6 +196,8 @@ Rectangle {
             color: "#ffffff"
             text: qsTr("0    ")
         }
+
+
 
     }
 }
